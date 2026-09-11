@@ -7,7 +7,7 @@ A dark, night-themed Discord-style interface with a custom egg mark. This first 
 Because this is a static interface, any static server works:
 
 ```bash
-python3 -m http.server 4173 --bind 0.0.0.0
+npm run dev
 ```
 
 Then open `http://localhost:4173`.

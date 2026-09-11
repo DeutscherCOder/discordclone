@@ -4,7 +4,7 @@
   "version": "0.1.0",
   "description": "A dark night-themed Discord-style interface",
   "scripts": {
-    "dev": "python3 -m http.server 4173 --bind 0.0.0.0",
-    "preview": "python3 -m http.server 4173 --bind 0.0.0.0"
+    "dev": "python3 -m http.server 4173 --bind 0.0.0.0 --directory public",
+    "preview": "python3 -m http.server 4173 --bind 0.0.0.0 --directory public"
   }
 }
