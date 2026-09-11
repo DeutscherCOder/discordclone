@@ -1,0 +1,168 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="theme-color" content="#0c111d" />
+    <title>Moonlit — your night space</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <svg class="svg-sprite" aria-hidden="true">
+      <symbol id="i-search" viewBox="0 0 24 24"><circle cx="11" cy="11" r="6.5"/><path d="m16 16 4.5 4.5"/></symbol>
+      <symbol id="i-bell" viewBox="0 0 24 24"><path d="M18 9a6 6 0 0 0-12 0c0 7-3 7-3 9h18c0-2-3-2-3-9M10 21h4"/></symbol>
+      <symbol id="i-pin" viewBox="0 0 24 24"><path d="m15 4 5 5-3 1-4 4 2 5-1 1-4-4-5 2-1-1 4-4 1-3-5-5 1-1 5 2 4-4 1 1z"/></symbol>
+      <symbol id="i-users" viewBox="0 0 24 24"><path d="M16 20v-1.5a4 4 0 0 0-4-4H7a4 4 0 0 0-4 4V20M9.5 10.5a3.5 3.5 0 1 0 0-7 3.5 3.5 0 0 0 0 7zM17 11a3 3 0 1 0-1.1-5.8M17 14.5h1a4 4 0 0 1 4 4V20"/></symbol>
+      <symbol id="i-hash" viewBox="0 0 24 24"><path d="M10 3 8 21M16 3l-2 18M4 9h17M3 15h17"/></symbol>
+      <symbol id="i-volume" viewBox="0 0 24 24"><path d="M4 10v4h4l5 4V6l-5 4H4zM17 9a4 4 0 0 1 0 6M19.5 6.5a8 8 0 0 1 0 11"/></symbol>
+      <symbol id="i-mic" viewBox="0 0 24 24"><rect x="8" y="3" width="8" height="12" rx="4"/><path d="M5 11a7 7 0 0 0 14 0M12 18v3M9 21h6"/></symbol>
+      <symbol id="i-headphones" viewBox="0 0 24 24"><path d="M4 14v-2a8 8 0 0 1 16 0v2M4 14h3v5H5a1 1 0 0 1-1-1v-4zM20 14h-3v5h2a1 1 0 0 0 1-1v-4z"/></symbol>
+      <symbol id="i-settings" viewBox="0 0 24 24"><path d="M12 8a4 4 0 1 0 0 8 4 4 0 0 0 0-8zM4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M4 12H2M22 12h-2M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4M12 4V2M12 22v-2"/></symbol>
+      <symbol id="i-plus" viewBox="0 0 24 24"><path d="M12 5v14M5 12h14"/></symbol>
+      <symbol id="i-sparkles" viewBox="0 0 24 24"><path d="m12 3 1.5 5.5L19 10l-5.5 1.5L12 17l-1.5-5.5L5 10l5.5-1.5L12 3zM19 16l.7 2.3L22 19l-2.3.7L19 22l-.7-2.3L16 19l2.3-.7L19 16z"/></symbol>
+      <symbol id="i-send" viewBox="0 0 24 24"><path d="m4 4 17 8-17 8 3-8-3-8zM7 12h14"/></symbol>
+      <symbol id="i-paperclip" viewBox="0 0 24 24"><path d="m20 11-8.5 8.5a5 5 0 0 1-7-7L13 4a3.5 3.5 0 0 1 5 5l-8.5 8.5a2 2 0 0 1-3-3L14 7"/></symbol>
+      <symbol id="i-smile" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M8 14s1.5 2 4 2 4-2 4-2M9 9h.01M15 9h.01"/></symbol>
+      <symbol id="i-screen" viewBox="0 0 24 24"><rect x="3" y="4" width="18" height="13" rx="2"/><path d="M8 21h8M12 17v4"/></symbol>
+      <symbol id="i-phone" viewBox="0 0 24 24"><path d="M7 3h3l1 5-2 1.5a15 15 0 0 0 5.5 5.5L16 13l5 1v3c0 1.1-.9 2-2 2C10.7 19 5 13.3 5 6a2 2 0 0 1 2-2z"/></symbol>
+      <symbol id="i-video" viewBox="0 0 24 24"><rect x="3" y="6" width="13" height="12" rx="2"/><path d="m16 10 5-3v10l-5-3"/></symbol>
+      <symbol id="i-more" viewBox="0 0 24 24"><circle cx="5" cy="12" r="1.4"/><circle cx="12" cy="12" r="1.4"/><circle cx="19" cy="12" r="1.4"/></symbol>
+      <symbol id="i-arrow" viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"/></symbol>
+      <symbol id="i-check" viewBox="0 0 24 24"><path d="m5 12 4 4L19 6"/></symbol>
+      <symbol id="i-moon" viewBox="0 0 24 24"><path d="M20 15.5A8.5 8.5 0 0 1 8.5 4 8.5 8.5 0 1 0 20 15.5z"/></symbol>
+      <symbol id="i-compass" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="m15 9-2 4-4 2 2-4 4-2z"/></symbol>
+      <symbol id="i-shield" viewBox="0 0 24 24"><path d="M12 3 20 6v5c0 5-3.4 8.5-8 10-4.6-1.5-8-5-8-10V6l8-3zM9 12l2 2 4-4"/></symbol>
+    </svg>
+
+    <div class="app-shell">
+      <aside class="server-rail" aria-label="Servers">
+        <button class="brand-mark active" aria-label="Moonlit home" data-server="Moonlit">
+          <span class="egg-mark"><span></span></span>
+        </button>
+        <div class="rail-divider"></div>
+        <button class="server-button server-selected" data-server="Moonlit" aria-label="Moonlit server">M</button>
+        <button class="server-button server-rose" data-server="The Garden" aria-label="The Garden server">G</button>
+        <button class="server-button server-blue" data-server="Study Room" aria-label="Study Room server">S</button>
+        <button class="add-server" aria-label="Add a server"><svg class="icon"><use href="#i-plus"></use></svg></button>
+        <button class="add-server discover-server" aria-label="Discover servers"><svg class="icon"><use href="#i-compass"></use></svg></button>
+        <div class="rail-spacer"></div>
+        <button class="rail-bottom" aria-label="Help">?</button>
+      </aside>
+
+      <aside class="workspace-sidebar" aria-label="Moonlit navigation">
+        <div class="workspace-heading">
+          <div>
+            <p class="eyebrow">YOUR NIGHT SPACE</p>
+            <h1 id="server-name">Moonlit</h1>
+          </div>
+          <button class="icon-button subtle" aria-label="Server options"><svg class="icon"><use href="#i-more"></use></svg></button>
+        </div>
+        <div class="server-status"><span class="status-dot"></span> All systems peaceful</div>
+
+        <nav class="channel-list">
+          <div class="channel-category"><span>TEXT ROOMS</span><button class="tiny-button" aria-label="Add text room"><svg class="icon"><use href="#i-plus"></use></svg></button></div>
+          <button class="channel-button active" data-channel="lobby"><svg class="channel-icon"><use href="#i-hash"></use></svg><span>lobby</span><span class="unread-count">3</span></button>
+          <button class="channel-button" data-channel="ideas"><svg class="channel-icon"><use href="#i-hash"></use></svg><span>ideas</span></button>
+          <button class="channel-button" data-channel="photos"><svg class="channel-icon"><use href="#i-hash"></use></svg><span>photos</span><span class="channel-lock">✦</span></button>
+
+          <div class="channel-category voice-category"><span>VOICE ROOMS</span><button class="tiny-button" aria-label="Add voice room"><svg class="icon"><use href="#i-plus"></use></svg></button></div>
+          <button class="channel-button voice-channel" data-channel="fireside"><svg class="channel-icon"><use href="#i-volume"></use></svg><span>fireside</span><span class="voice-count">4</span></button>
+          <button class="channel-button voice-channel" data-channel="quiet-corner"><svg class="channel-icon"><use href="#i-volume"></use></svg><span>quiet corner</span></button>
+        </nav>
+
+        <div class="sidebar-prompt">
+          <div class="prompt-glow"><svg class="icon"><use href="#i-sparkles"></use></svg></div>
+          <div><strong>Make it yours</strong><p>Invite people to your space.</p></div>
+          <button class="prompt-arrow" aria-label="Invite people"><svg class="icon"><use href="#i-arrow"></use></svg></button>
+        </div>
+
+        <div class="user-panel">
+          <div class="avatar avatar-you">A<span class="presence-dot"></span></div>
+          <div class="user-copy"><strong>alex</strong><span>#0815</span></div>
+          <button class="user-action mic-toggle" aria-label="Mute microphone"><svg class="icon"><use href="#i-mic"></use></svg></button>
+          <button class="user-action deafen-toggle" aria-label="Deafen"><svg class="icon"><use href="#i-headphones"></use></svg></button>
+          <button class="user-action" aria-label="User settings"><svg class="icon"><use href="#i-settings"></use></svg></button>
+        </div>
+      </aside>
+
+      <main class="workspace">
+        <header class="topbar">
+          <div class="mobile-title"><button class="mobile-menu" aria-label="Open navigation">☰</button><span class="mini-egg"></span><strong>Moonlit</strong></div>
+          <div class="channel-title"><div class="title-icon"><svg class="icon"><use href="#i-hash"></use></svg></div><div><h2 id="channel-name">lobby</h2><p id="channel-topic">a soft place to land after a long day</p></div></div>
+          <div class="top-actions">
+            <button class="icon-button" aria-label="Notifications"><svg class="icon"><use href="#i-bell"></use></svg></button>
+            <button class="icon-button" aria-label="Pinned messages"><svg class="icon"><use href="#i-pin"></use></svg></button>
+            <button class="icon-button members-toggle" aria-label="Toggle members"><svg class="icon"><use href="#i-users"></use></svg></button>
+            <label class="search-box"><svg class="icon"><use href="#i-search"></use></svg><input id="search-input" type="search" placeholder="Search Moonlit" /><kbd>⌘ K</kbd></label>
+            <button class="icon-button" aria-label="Help"><svg class="icon"><use href="#i-shield"></use></svg></button>
+          </div>
+        </header>
+
+        <div class="workspace-body">
+          <section class="chat-pane" aria-label="Chat">
+            <div class="welcome-block">
+              <div class="welcome-orb"><span class="egg-mark large"><span></span></span></div>
+              <p class="eyebrow">WELCOME TO THE NIGHT</p>
+              <h3>Welcome to <span>#lobby</span></h3>
+              <p>This is the beginning of this little corner of the internet. Say hello, share a thought, or just stay awhile.</p>
+              <div class="welcome-rule"><span></span><i>today</i><span></span></div>
+            </div>
+
+            <div id="message-list" class="message-list">
+              <article class="message">
+                <div class="avatar avatar-lilac">L<span class="presence-dot"></span></div>
+                <div class="message-content"><div class="message-meta"><strong>lilac</strong><span class="role-pill">MOD</span><time>Today at 20:41</time></div><p>the stars are looking especially good tonight ✦</p></div>
+              </article>
+              <article class="message">
+                <div class="avatar avatar-sage">N<span class="presence-dot"></span></div>
+                <div class="message-content"><div class="message-meta"><strong>noah</strong><time>Today at 20:44</time></div><p>That is a very convincing argument for staying up five more minutes.</p><div class="message-reaction">☾ <span>4</span></div></div>
+              </article>
+              <article class="message">
+                <div class="avatar avatar-amber">R<span class="presence-dot"></span></div>
+                <div class="message-content"><div class="message-meta"><strong>riley</strong><time>Today at 20:48</time></div><p>I dropped a few photos in <span class="mention">#photos</span> if anyone wants a tiny evening walk.</p></div>
+              </article>
+              <div class="date-divider"><span>Monday, September 11, 2026</span></div>
+              <article class="message message-highlight">
+                <div class="avatar avatar-you">A<span class="presence-dot"></span></div>
+                <div class="message-content"><div class="message-meta"><strong>alex</strong><span class="you-pill">YOU</span><time>Today at 21:03</time></div><p>just finished polishing this place. what should we build first?</p></div>
+              </article>
+            </div>
+
+            <form id="composer" class="composer">
+              <input id="file-input" type="file" hidden multiple />
+              <div id="attachment-preview" class="attachment-preview" hidden></div>
+              <div class="composer-row"><button type="button" id="attach-button" class="composer-button add-attachment" aria-label="Attach a file"><svg class="icon"><use href="#i-paperclip"></use></svg></button><input id="message-input" autocomplete="off" placeholder="Message #lobby" aria-label="Message" /><button type="button" class="composer-button" aria-label="Add gift">✦</button><button type="button" class="composer-button" aria-label="Add emoji"><svg class="icon"><use href="#i-smile"></use></svg></button><button type="submit" class="send-button" aria-label="Send message"><svg class="icon"><use href="#i-send"></use></svg></button></div>
+            </form>
+          </section>
+
+          <aside class="member-panel" aria-label="Members">
+            <div class="member-heading"><span>MEMBERS — 8</span><button class="icon-button subtle close-members" aria-label="Close members">×</button></div>
+            <div class="member-group"><p class="member-label">ONLINE — 5</p>
+              <button class="member-row"><div class="avatar avatar-lilac small">L<span class="presence-dot"></span></div><span><strong>lilac</strong><small>making tea</small></span><i class="member-status">✦</i></button>
+              <button class="member-row"><div class="avatar avatar-sage small">N<span class="presence-dot"></span></div><span><strong>noah</strong><small>listening quietly</small></span></button>
+              <button class="member-row"><div class="avatar avatar-amber small">R<span class="presence-dot"></span></div><span><strong>riley</strong><small>in #photos</small></span></button>
+              <button class="member-row"><div class="avatar avatar-blue small">S<span class="presence-dot"></span></div><span><strong>sage</strong><small>reading</small></span></button>
+              <button class="member-row"><div class="avatar avatar-you small">A<span class="presence-dot"></span></div><span><strong>alex</strong><small>in #lobby</small></span></button>
+            </div>
+            <div class="member-group"><p class="member-label">AWAY — 3</p>
+              <button class="member-row muted"><div class="avatar avatar-pink small">J</div><span><strong>jules</strong><small>away</small></span></button>
+              <button class="member-row muted"><div class="avatar avatar-coral small">T</div><span><strong>taylor</strong><small>away</small></span></button>
+              <button class="member-row muted"><div class="avatar avatar-teal small">K</div><span><strong>kai</strong><small>away</small></span></button>
+            </div>
+          </aside>
+        </div>
+
+        <div id="voice-dock" class="voice-dock" hidden>
+          <div class="voice-live"><span class="pulse-dot"></span><div><strong>Fireside</strong><small>Voice connected</small></div></div>
+          <div class="voice-participants"><div class="avatar avatar-lilac tiny">L</div><div class="avatar avatar-sage tiny">N</div><div class="avatar avatar-you tiny">A</div><span>+1</span></div>
+          <div class="voice-actions"><button id="voice-mic" class="voice-action active" aria-label="Mute microphone"><svg class="icon"><use href="#i-mic"></use></svg></button><button class="voice-action" aria-label="Deafen"><svg class="icon"><use href="#i-headphones"></use></svg></button><button id="share-screen" class="voice-action" aria-label="Share screen"><svg class="icon"><use href="#i-screen"></use></svg></button><button id="leave-voice" class="leave-call" aria-label="Leave voice"><svg class="icon"><use href="#i-phone"></use></svg></button></div>
+        </div>
+      </main>
+    </div>
+
+    <div id="call-banner" class="call-banner" hidden><div class="call-banner-icon"><svg class="icon"><use href="#i-volume"></use></svg></div><div><strong>Fireside is open</strong><span>4 people are hanging out</span></div><button id="join-voice" class="primary-button">Join voice <svg class="icon"><use href="#i-arrow"></use></svg></button><button class="dismiss-banner" aria-label="Dismiss">×</button></div>
+    <div id="screen-share-modal" class="modal-backdrop" hidden><div class="screen-modal"><div class="modal-heading"><div><p class="eyebrow">LIVE PREVIEW</p><h3>Your screen share</h3></div><button id="close-share" class="icon-button">×</button></div><video id="screen-preview" autoplay muted playsinline></video><div class="modal-footer"><span><span class="pulse-dot"></span> Sharing to <strong>Fireside</strong></span><button id="stop-share" class="danger-button">Stop sharing</button></div></div></div>
+    <div id="toast" class="toast" role="status" aria-live="polite"></div>
+    <script src="app.js"></script>
+  </body>
+</html>
